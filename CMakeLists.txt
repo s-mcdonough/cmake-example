@@ -9,13 +9,18 @@ project(cmake-example
 include(ExternalProject)
 include(FetchContent)
 
-# Enable CMake's built in 
+# Enable CMake's built in testing framework
 include(CTest)
 enable_testing()
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
+
+# Flags for all targets in this project
+add_compile_options(-Wall -Wextra -pedantic -Werror)
+    # $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>
+    # $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -pedantic -Werror>)
 
 add_subdirectory(src/foo)
 add_subdirectory(test/unit)

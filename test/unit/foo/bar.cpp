@@ -2,5 +2,7 @@
 #include "bar.h"
 
 TEST_CASE("The answer to life, the universe and everything", "[towels]") {
+    // uint8_t willErr = foo::bar(); // Due to compiler flags
+    // CHECK(willErr == 42);
     REQUIRE(foo::bar() == 42);
 }

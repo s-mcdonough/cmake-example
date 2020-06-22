@@ -5,6 +5,6 @@ add_library(foo STATIC)
 # add_library(ALIAS)
 
 # Set target properties
-target_include_directories(foo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_sources(foo PRIVATE foo.cpp)
+target_include_directories(foo PUBLIC .)
+target_sources(foo PRIVATE bar.cpp)
 target_compile_options(foo PRIVATE -Wall -Wextra -Wpedantic -Werror) # TODO: Make crossplatform

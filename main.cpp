@@ -1,6 +1,7 @@
 #include <iostream>
-#include "foo.h"
+#include "bar.h"
 
-int main(int, char**) {
-    std::cout << "What is your favorite number = " << foo::bar() << "\n";
+int main() {
+    std::cout << "??? = " << foo::bar() << "\n";
+    return EXIT_SUCCESS;
 }

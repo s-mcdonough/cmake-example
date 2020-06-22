@@ -1,10 +1,15 @@
+# We require a recent version of CMake to utilize 
+# modern features of the language
 cmake_minimum_required(VERSION 3.16.0)
-project(cmake-example VERSION 0.1.0)
+project(cmake-example  
+                      LANGUAGES CXX
+                      VERSION 0.1.0)
 
 # See test/unit for more info
 include(ExternalProject)
 include(FetchContent)
 
+# Enable CMake's built in 
 include(CTest)
 enable_testing()
 

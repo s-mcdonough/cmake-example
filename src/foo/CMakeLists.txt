@@ -1,6 +1,7 @@
 # Set up a library using cmake targets
 
-# A target can be an executable or library, we will make foo a static library
+# A target can be an executable or library, we will 
+# make foo a shared library
 add_library(foo SHARED)
 
 # Set target properties

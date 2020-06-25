@@ -1,5 +1,5 @@
-# We require a recent version of CMake to utilize modern features of the
-# language
+# We require a recent version of CMake to 
+# utilize modern features of the language
 cmake_minimum_required(VERSION 3.16.0)
 project(
   cmake-example
@@ -19,9 +19,11 @@ set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
 # Flags for all targets in this project
-add_compile_options(-Wall -Wextra -pedantic -Werror)
-# $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX> $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall
-# -Wextra -pedantic -Werror>)
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/W4>"
+                    "$<$<CXX_COMPILER_ID:MSVC>:/WX>" 
+                    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall>"
+                    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-pedantic>"
+                    "$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Werror>")
 
 add_subdirectory(src/foo)
 add_subdirectory(test/unit)

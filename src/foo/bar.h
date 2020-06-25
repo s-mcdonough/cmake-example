@@ -1,10 +1,11 @@
 #ifndef FOO_H
 #define FOO_H
 
+#include "defines.h"
 #include <cstdint>
 
 namespace foo {
-uint16_t bar();
+FOOAPI uint16_t bar();
 } // namespace foo
 
 #endif // FOO_H
